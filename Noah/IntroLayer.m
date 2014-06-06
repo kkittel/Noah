@@ -9,12 +9,10 @@
 
 // Import the interfaces
 #import "IntroLayer.h"
-#import "HelloWorldLayer.h"
-
+#import "LoadingScene.h"
 
 #pragma mark - IntroLayer
 
-// HelloWorldLayer implementation
 @implementation IntroLayer
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
@@ -47,7 +45,7 @@
 			background = [CCSprite spriteWithFile:@"Default.png"];
 			background.rotation = 90;
 		} else {
-			background = [CCSprite spriteWithFile:@"Default-Landscape~ipad.png"];
+			background = [CCSprite spriteWithFile:@"Default.png"];
 		}
 		background.position = ccp(size.width/2, size.height/2);
 
@@ -61,6 +59,11 @@
 -(void) onEnter
 {
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:TargetScenePage1Scene ]];
+    
+    // Run the Book Scene
+    LoadingScene* scene = [LoadingScene sceneWithTargetScene:TargetScenePage1Scene];
+    [[CCDirector sharedDirector] replaceScene:scene];
+
 }
 @end

@@ -54,7 +54,8 @@
 		[self addChild: label];
 		
 		
-		
+
+		/*
 		//
 		// Leaderboards and Achievements
 		//
@@ -101,7 +102,7 @@
 		
 		// Add the menu to the layer
 		[self addChild:menu];
-
+*/
 	}
 	return self;
 }
